@@ -51,7 +51,7 @@ import { Statistics } from 'components/Statistics/Statistics';
      return `${positiveFeedback}%`;
    }
 
-   const options = ['good', 'neutral', 'bad'];
+   const options = Object.keys({ good, neutral, bad });
     
      return (
      <div>       
@@ -66,9 +66,9 @@ import { Statistics } from 'components/Statistics/Statistics';
        <Sections title={'Statistics'}>
              {onTotalFeedback() ? (
          <Statistics
-           Good={setGood}
-           Neutral={setNeutral}
-           Bad={setBad}
+           Good={good}
+           Neutral={neutral}
+           Bad={bad}
            Total={onTotalFeedback()}
            positivePercentage={onPositiveFeedback()}  
          />            
